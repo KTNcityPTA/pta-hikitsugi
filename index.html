@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>交野市PTA協議会 会長 引き継ぎ資料</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;700&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1a1a2e;--ink-l:#4a4a6a;--ink-m:#9090aa;
+  --paper:#f7f6f3;--paper-w:#f0ede4;--card:#ffffff;
+  --red:#b83228;--red-s:#f8e8e6;--red-t:#fdf4f4;
+  --gold:#9a6f00;--gold-s:#fdf3d6;
+  --teal:#0f5c4a;--teal-s:#e4f2ee;
+  --blue:#1a5fa8;--blue-s:#e6f0fb;
+  --border:#e2dfd6;--border-m:#ccc9be;
+  --serif:'Noto Serif JP',serif;--sans:'Noto Sans JP',sans-serif;
+  --r:10px;--r-sm:6px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--paper);color:var(--ink);font-size:14px;line-height:1.7}
+
+/* ── FAB ── */
+#fab{position:fixed;bottom:24px;right:20px;z-index:900;background:var(--red);color:#fff;border:none;border-radius:50px;padding:13px 20px;font-family:var(--sans);font-size:13px;font-weight:500;cursor:pointer;display:flex;align-items:center;gap:8px;box-shadow:0 4px 18px rgba(184,50,40,.38);transition:transform .2s;-webkit-tap-highlight-color:transparent}
+#fab:hover{transform:translateY(-2px)}
+#fab:active{transform:scale(.97)}
+.fab-dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.65);animation:fp 1.8s infinite}
+@keyframes fp{0%,100%{opacity:.4;transform:scale(1)}50%{opacity:1;transform:scale(1.35)}}
+
+/* ── TOPNAV ── */
+#topnav{position:sticky;top:0;z-index:800;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 16px;height:52px}
+#topnav .logo{font-family:var(--serif);font-size:13px;font-weight:500;letter-spacing:.04em;line-height:1.4}
+#menu-btn{background:none;border:none;color:#fff;cursor:pointer;padding:6px;font-size:22px;line-height:1}
+
+/* ── DRAWER ── */
+#drawer{position:fixed;top:0;left:0;bottom:0;width:256px;background:var(--ink);color:#fff;z-index:1000;transform:translateX(-100%);transition:transform .25s ease;overflow-y:auto;padding:24px 0}
+#drawer.open{transform:translateX(0)}
+#overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:999}
+#overlay.show{display:block}
+#drawer .d-logo{padding:0 20px 20px;border-bottom:.5px solid rgba(255,255,255,.1);margin-bottom:16px}
+#drawer .d-logo h1{font-family:var(--serif);font-size:13px;font-weight:500;line-height:1.6}
+#drawer .d-logo p{font-size:11px;color:rgba(255,255,255,.4);margin-top:3px}
+#drawer .d-sec{padding:0 12px;margin-bottom:20px}
+#drawer .d-lbl{font-size:10px;color:rgba(255,255,255,.3);letter-spacing:.1em;padding:0 8px;margin-bottom:5px}
+#drawer a{display:block;padding:7px 12px;color:rgba(255,255,255,.7);text-decoration:none;font-size:13px;border-radius:6px;transition:all .15s;margin-bottom:1px}
+#drawer a:hover,#drawer a.act{background:rgba(255,255,255,.1);color:#fff}
+#drawer .last-upd{padding:16px 20px 0;font-size:11px;color:rgba(255,255,255,.25);border-top:.5px solid rgba(255,255,255,.07);margin-top:12px}
+
+@media(min-width:860px){
+  #topnav{display:none}
+  #drawer{transform:translateX(0)!important}
+  #overlay{display:none!important}
+  main{margin-left:240px}
+}
+
+/* ── MAIN ── */
+main{padding:28px 20px 100px;max-width:860px}
+@media(min-width:860px){main{padding:48px 52px 100px}}
+
+/* ── HERO ── */
+.hero{background:var(--ink);color:#fff;border-radius:var(--r);padding:28px 24px;margin-bottom:36px;position:relative;overflow:hidden}
+@media(min-width:600px){.hero{padding:36px 40px}}
+.hero::before{content:'';position:absolute;top:-30px;right:-30px;width:160px;height:160px;border-radius:50%;border:32px solid rgba(255,255,255,.04)}
+.hero h1{font-family:var(--serif);font-size:20px;font-weight:700;letter-spacing:.05em;margin-bottom:6px}
+@media(min-width:600px){.hero h1{font-size:24px}}
+.hero .sub{font-size:12px;color:rgba(255,255,255,.45);margin-bottom:24px}
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.h-stat .n{font-family:var(--serif);font-size:24px;font-weight:700;line-height:1}
+.h-stat .l{font-size:10px;color:rgba(255,255,255,.4);margin-top:4px;letter-spacing:.04em}
+
+/* ── SECTION ── */
+.sec{margin-bottom:56px}
+.sec-hd{display:flex;align-items:baseline;gap:12px;margin-bottom:24px;padding-bottom:12px;border-bottom:1.5px solid var(--ink)}
+.sec-hd h2{font-family:var(--serif);font-size:18px;font-weight:700;letter-spacing:.04em}
+@media(min-width:600px){.sec-hd h2{font-size:20px}}
+.sec-num{font-size:11px;font-weight:500;color:var(--red);letter-spacing:.1em}
+.sec-sub{font-size:11px;color:var(--ink-m)}
+
+/* ── CARD ── */
+.card{background:var(--card);border:.5px solid var(--border);border-radius:var(--r);padding:18px 20px;margin-bottom:14px}
+.card-title{font-size:13px;font-weight:500;color:var(--ink);margin-bottom:12px}
+
+/* ── IMP GRID ── */
+.imp-grid{display:grid;gap:14px}
+@media(min-width:600px){.imp-grid{grid-template-columns:1fr 1fr}}
+.imp-card{background:var(--card);border:.5px solid var(--border);border-radius:var(--r);padding:18px 20px;border-left:4px solid var(--red)}
+.imp-card.g{border-left-color:var(--gold)}
+.imp-card.t{border-left-color:var(--teal)}
+.imp-card.b{border-left-color:var(--blue)}
+.imp-card.full{grid-column:1/-1}
+.imp-cat{font-size:10px;font-weight:500;letter-spacing:.1em;color:var(--red);margin-bottom:7px}
+.imp-card.g .imp-cat{color:var(--gold)}
+.imp-card.t .imp-cat{color:var(--teal)}
+.imp-card.b .imp-cat{color:var(--blue)}
+.imp-title{font-size:14px;font-weight:500;margin-bottom:8px;line-height:1.5}
+.imp-body{font-size:13px;color:var(--ink-l);line-height:1.85}
+.imp-adv{margin-top:10px;padding:9px 12px;background:var(--red-s);border-radius:var(--r-sm);font-size:12px;color:var(--red);line-height:1.75}
+.imp-card.g .imp-adv{background:var(--gold-s);color:var(--gold)}
+.imp-card.t .imp-adv{background:var(--teal-s);color:var(--teal)}
+.imp-card.b .imp-adv{background:var(--blue-s);color:var(--blue)}
+.adv-lbl{font-size:10px;font-weight:500;letter-spacing:.07em;margin-bottom:3px}
+
+/* ── COST TABLE ── */
+.cost-table{width:100%;border-collapse:collapse;font-size:13px}
+.cost-table th{background:var(--ink);color:#fff;padding:8px 12px;text-align:left;font-weight:500;font-size:12px}
+.cost-table th:first-child{border-radius:6px 0 0 0}
+.cost-table th:last-child{border-radius:0 6px 0 0;text-align:right}
+.cost-table td{padding:9px 12px;border-bottom:.5px solid var(--border);vertical-align:top}
+.cost-table td:last-child{text-align:right;font-weight:500}
+.cost-table tr:last-child td{border-bottom:none;font-weight:700;background:var(--paper-w)}
+.cost-table tr:nth-child(even) td{background:var(--paper-w)}
+
+/* ── TIMELINE ── */
+.tl-row{display:grid;grid-template-columns:52px 1fr}
+.tl-col{display:flex;flex-direction:column;align-items:center;padding-top:12px}
+.tl-dot{width:40px;height:40px;border-radius:50%;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:11px;font-weight:700;flex-shrink:0;z-index:1}
+.tl-dot.hi{background:var(--red)}
+.tl-dot.lt{background:var(--paper-w);color:var(--ink-m);border:1.5px solid var(--border)}
+.tl-line{width:1.5px;flex:1;background:var(--border);min-height:14px}
+.tl-body{padding:10px 0 18px 16px;border-bottom:.5px dashed var(--border)}
+.tl-row:last-child .tl-body{border-bottom:none}
+.tl-title{font-size:13px;font-weight:500;margin-bottom:5px}
+.chips{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:5px}
+.chip{font-size:11px;padding:2px 9px;border-radius:20px;font-weight:500}
+.chip-r{background:var(--red-s);color:var(--red)}
+.chip-g{background:var(--gold-s);color:var(--gold)}
+.chip-t{background:var(--teal-s);color:var(--teal)}
+.chip-n{background:var(--paper-w);color:var(--ink-m)}
+.tl-note{font-size:12px;color:var(--ink-m);line-height:1.75}
+.tl-link{font-size:12px;color:var(--red);text-decoration:none;display:inline-block;margin-top:3px}
+
+/* ── MONTH DETAIL ── */
+.mon-sec{margin-bottom:40px}
+.mon-hd{background:var(--paper-w);border:.5px solid var(--border);border-radius:var(--r);padding:14px 18px;display:flex;align-items:center;gap:14px;margin-bottom:16px}
+.mon-badge{width:46px;height:46px;border-radius:50%;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:12px;font-weight:700;flex-shrink:0}
+.mon-badge.has-data{background:var(--red)}
+.mon-hd h3{font-family:var(--serif);font-size:16px;font-weight:700}
+.mon-hd p{font-size:12px;color:var(--ink-m);margin-top:2px}
+
+.ag-wrap{display:block;overflow-x:auto;margin-bottom:14px}
+.ag-table{width:100%;min-width:380px;border-collapse:collapse;font-size:13px}
+.ag-table th{background:var(--ink);color:#fff;padding:9px 12px;text-align:left;font-weight:500;font-size:12px;white-space:nowrap}
+.ag-table th:first-child{border-radius:6px 0 0 0}
+.ag-table th:last-child{border-radius:0 6px 0 0}
+.ag-table td{padding:9px 12px;border-bottom:.5px solid var(--border);vertical-align:top;line-height:1.7}
+.ag-table tr:last-child td{border-bottom:none}
+.ag-table tr:nth-child(even) td{background:var(--paper-w)}
+
+.res-box{background:var(--teal-s);border-left:3px solid var(--teal);border-radius:0 var(--r-sm) var(--r-sm) 0;padding:11px 14px;font-size:13px;color:var(--ink-l);line-height:1.8;margin-bottom:12px}
+.res-lbl{font-size:10px;font-weight:500;color:var(--teal);letter-spacing:.08em;margin-bottom:3px}
+.adv-box{background:var(--gold-s);border-left:3px solid var(--gold);border-radius:0 var(--r-sm) var(--r-sm) 0;padding:11px 14px;font-size:13px;color:var(--ink-l);line-height:1.8;margin-bottom:12px}
+.adv-lbl2{font-size:10px;font-weight:500;color:var(--gold);letter-spacing:.08em;margin-bottom:3px}
+.doc-row{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}
+.doc-lnk{display:inline-flex;align-items:center;gap:5px;font-size:12px;padding:5px 12px;border-radius:20px;border:.5px solid var(--border);color:var(--ink-l);text-decoration:none;background:var(--card);transition:all .15s}
+.doc-lnk:hover{border-color:var(--ink);color:var(--ink)}
+
+/* ── EMPTY ── */
+.empty{text-align:center;padding:28px 16px;color:var(--ink-m);font-size:13px;line-height:2.1;border:1.5px dashed var(--border);border-radius:var(--r)}
+
+/* ── GUIDE ── */
+.guide-step{display:flex;gap:14px;align-items:flex-start;margin-bottom:18px}
+.g-num{width:30px;height:30px;border-radius:50%;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;flex-shrink:0;margin-top:1px}
+.g-title{font-size:14px;font-weight:500;margin-bottom:3px}
+.g-text{font-size:13px;color:var(--ink-l);line-height:1.8}
+.g-code{display:inline-block;background:var(--paper-w);border:.5px solid var(--border);border-radius:4px;padding:1px 7px;font-size:12px;font-family:monospace}
+
+/* ── GITHUB AUTO-UPDATE ── */
+#gh-panel{background:var(--card);border:.5px solid var(--border);border-radius:var(--r);padding:18px 20px;margin-bottom:14px}
+.gh-form{display:flex;flex-direction:column;gap:10px;margin-bottom:14px}
+.gh-row{display:flex;flex-direction:column;gap:4px}
+.gh-label{font-size:12px;color:var(--ink-l)}
+.gh-input{width:100%;padding:8px 12px;border:.5px solid var(--border);border-radius:var(--r-sm);font-family:var(--sans);font-size:13px;color:var(--ink);background:var(--paper-w);outline:none}
+.gh-input:focus{border-color:var(--ink)}
+.gh-btn{padding:10px 20px;background:var(--ink);color:#fff;border:none;border-radius:20px;font-family:var(--sans);font-size:13px;cursor:pointer;align-self:flex-start;transition:opacity .15s}
+.gh-btn:hover{opacity:.8}
+.gh-btn:disabled{opacity:.4;cursor:not-allowed}
+#gh-status{font-size:13px;padding:10px 14px;border-radius:var(--r-sm);display:none;line-height:1.7}
+#gh-status.ok{background:var(--teal-s);color:var(--teal)}
+#gh-status.err{background:var(--red-s);color:var(--red)}
+#gh-status.loading{background:var(--blue-s);color:var(--blue)}
+
+/* ── TMPL BOX ── */
+.tmpl-box{background:var(--paper-w);border:.5px solid var(--border);border-radius:var(--r);padding:14px 16px;font-size:12px;line-height:1.95;font-family:monospace;white-space:pre-wrap;word-break:break-all;color:var(--ink);margin-bottom:10px}
+.copy-btn{font-size:12px;padding:6px 14px;border-radius:20px;border:.5px solid var(--border);background:transparent;color:var(--ink-l);cursor:pointer;font-family:var(--sans);transition:all .15s}
+.copy-btn:hover{background:var(--paper-w)}
+
+/* ── MODAL ── */
+#modal-wrap{display:none;position:fixed;inset:0;background:rgba(26,26,46,.5);z-index:2000;align-items:flex-end;justify-content:center}
+@media(min-width:600px){#modal-wrap{align-items:center}}
+#modal-wrap.show{display:flex}
+#modal{background:var(--card);border-radius:var(--r) var(--r) 0 0;padding:28px 24px;width:100%;max-width:480px}
+@media(min-width:600px){#modal{border-radius:var(--r)}}
+#modal h3{font-family:var(--serif);font-size:17px;margin-bottom:8px}
+#modal p{font-size:13px;color:var(--ink-l);line-height:1.8;margin-bottom:14px}
+.m-msg{background:var(--paper-w);border:.5px solid var(--border);border-radius:var(--r-sm);padding:12px 14px;font-size:13px;color:var(--ink);line-height:1.8;margin-bottom:18px}
+.m-btns{display:flex;gap:10px;justify-content:flex-end}
+.m-btn{font-size:13px;padding:8px 18px;border-radius:20px;border:.5px solid var(--border);background:transparent;color:var(--ink-l);cursor:pointer;font-family:var(--sans)}
+.m-btn.p{background:var(--ink);color:#fff;border-color:var(--ink)}
+.m-btn:active{transform:scale(.97)}
+
+/* ── GH STEPS ── */
+.gh-step{display:flex;gap:12px;align-items:flex-start;padding:11px 0;border-bottom:.5px solid var(--border)}
+.gh-step:last-child{border-bottom:none}
+.gh-n{min-width:22px;height:22px;border-radius:50%;background:var(--red-s);color:var(--red);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:500;flex-shrink:0;margin-top:2px}
+.gh-body{font-size:13px;color:var(--ink-l);line-height:1.8}
+.gh-body b{color:var(--ink);font-weight:500}
+.url-chip{display:inline-block;background:var(--paper-w);border:.5px solid var(--border-m);border-radius:var(--r-sm);padding:1px 8px;font-size:12px;font-family:monospace;color:var(--ink);word-break:break-all}
+.warn-box{background:var(--red-t);border-radius:var(--r-sm);padding:12px 14px;font-size:12px;color:var(--red);line-height:1.85;margin-top:14px}
+</style>
+</head>
+<body>
+
+<button id="fab" onclick="openModal()">
+  <span class="fab-dot"></span>現況を引き継ぎ資料に反映
+</button>
+
+<div id="modal-wrap">
+  <div id="modal" onclick="event.stopPropagation()">
+    <h3>引き継ぎ資料に反映する</h3>
+    <p>Claudeのチャットに戻り、下のメッセージを貼り付けて送ってください。</p>
+    <div class="m-msg">これまでの記録を引き継ぎ資料HTMLに反映して</div>
+    <div class="m-btns">
+      <button class="m-btn" onclick="closeModal()">閉じる</button>
+      <button class="m-btn p" onclick="copyReflect()">メッセージをコピー</button>
+    </div>
+  </div>
+</div>
+<div id="modal-wrap" onclick="closeModal()" style="display:none"></div>
+
+<div id="overlay" onclick="closeDrawer()"></div>
+
+<nav id="topnav">
+  <div class="logo">交野市PTA協議会<br>会長 引き継ぎ資料</div>
+  <button id="menu-btn" onclick="openDrawer()" aria-label="メニュー">☰</button>
+</nav>
+
+<nav id="drawer">
+  <div class="d-logo">
+    <h1>交野市PTA協議会<br>会長 引き継ぎ資料</h1>
+    <p>活動期間：2月〜翌年5月末</p>
+  </div>
+  <div class="d-sec">
+    <div class="d-lbl">コンテンツ</div>
+    <a href="#important" onclick="closeDrawer()">⚑ 引き継ぎ重要事項</a>
+    <a href="#year" onclick="closeDrawer()">◎ 年間スケジュール</a>
+    <a href="#monthly" onclick="closeDrawer()">□ 月別詳細</a>
+    <a href="#howto" onclick="closeDrawer()">◉ 使い方・更新方法</a>
+    <a href="#successor" onclick="closeDrawer()">▶ 後任会長へ</a>
+  </div>
+  <div class="d-sec">
+    <div class="d-lbl">月別ジャンプ</div>
+    <a href="#m-2" onclick="closeDrawer()" id="nav-m-2">2月（着任準備）</a>
+    <a href="#m-3" onclick="closeDrawer()" id="nav-m-3">3月</a>
+    <a href="#m-4" onclick="closeDrawer()" id="nav-m-4">4月</a>
+    <a href="#m-5" onclick="closeDrawer()" id="nav-m-5">5月</a>
+    <a href="#m-6" onclick="closeDrawer()" id="nav-m-6">6月</a>
+    <a href="#m-7" onclick="closeDrawer()" id="nav-m-7">7月</a>
+    <a href="#m-8" onclick="closeDrawer()" id="nav-m-8">8月</a>
+    <a href="#m-9" onclick="closeDrawer()" id="nav-m-9">9月</a>
+    <a href="#m-10" onclick="closeDrawer()" id="nav-m-10">10月</a>
+    <a href="#m-11" onclick="closeDrawer()" id="nav-m-11">11月</a>
+    <a href="#m-12" onclick="closeDrawer()" id="nav-m-12">12月</a>
+    <a href="#m-1" onclick="closeDrawer()" id="nav-m-1">1月</a>
+    <a href="#m-next2" onclick="closeDrawer()" id="nav-m-next2">翌年2月</a>
+    <a href="#m-next3" onclick="closeDrawer()" id="nav-m-next3">翌年3月（総会）</a>
+    <a href="#m-next4" onclick="closeDrawer()" id="nav-m-next4">翌年4月</a>
+    <a href="#m-next5" onclick="closeDrawer()" id="nav-m-next5">翌年5月末（終了）</a>
+  </div>
+  <div class="last-upd">最終更新：<span id="last-upd-txt">未記録</span></div>
+</nav>
+
+<main>
+  <div class="hero">
+    <h1>会長 引き継ぎ資料</h1>
+    <p class="sub">交野市PTA協議会　後任会長・役員へ　活動期間：2月〜翌年5月末</p>
+    <div class="hero-stats">
+      <div class="h-stat"><div class="n" id="s-act">0</div><div class="l">活動日報</div></div>
+      <div class="h-stat"><div class="n" id="s-memo">0</div><div class="l">気づき</div></div>
+      <div class="h-stat"><div class="n" id="s-kaigi">0</div><div class="l">会議記録</div></div>
+      <div class="h-stat"><div class="n" id="s-adv">0</div><div class="l">アドバイス</div></div>
+    </div>
+  </div>
+
+  <!-- 01 重要事項 -->
+  <section class="sec" id="important">
+    <div class="sec-hd"><span class="sec-num">01</span><h2>引き継ぎ重要事項</h2><span class="sec-sub">最初に読むべき事項</span></div>
+    <div class="imp-grid">
+      <div class="imp-card">
+        <div class="imp-cat">総会・運営</div>
+        <div class="imp-title">市P総会は3月開催に変更すべき</div>
+        <div class="imp-body">単Pの引き継ぎ繁忙期（3〜4月）に市P総会が重なると出席・集中が難しい。3月上旬前倒しで単Pの新旧引き継ぎ前に市Pの意思決定を完了できる。</div>
+        <div class="imp-adv"><div class="adv-lbl">▶ 後任へのアドバイス</div>年度当初から次年度総会日程を3月で仮押さえすること。変更には役員会の合意が必要。</div>
+      </div>
+      <div class="imp-card g">
+        <div class="imp-cat">年間スケジュール設計</div>
+        <div class="imp-title">4月・5月初旬に分会長会を2回設定</div>
+        <div class="imp-body">単P新会長への説明・サポート・出向委員会の役割決めを5月下旬の単P総会に間に合わせるには4月と5月初旬の2回が必須。</div>
+        <div class="imp-adv"><div class="adv-lbl">▶ 後任へのアドバイス</div>年度初めに会場確保・日程調整を最優先で。単P会長は就任直後で多忙なため連絡は丁寧に・早めに。</div>
+      </div>
+      <div class="imp-card t full">
+        <div class="imp-cat">単P支援</div>
+        <div class="imp-title">年度当初の単P支援が最も密度が高い時期</div>
+        <div class="imp-body">年度が明けると①市Pの役割説明②立ち上げ期の案内③単P総会で決めるべき事項の共有④活動方針相談⑤出向委員会の役割決め、が目白押し。この時期の動きが1年間の関係構築を左右する。</div>
+        <div class="imp-adv"><div class="adv-lbl">▶ 後任へのアドバイス</div>市P役員は引き継ぎが軽微（継続メンバーが主軸）なので4月の単P支援に全力を向けられる。この時期を惜しまないこと。</div>
+      </div>
+      <div class="imp-card b full">
+        <div class="imp-cat">費用サマリー（年間）</div>
+        <div class="imp-title">活動費用の全体像</div>
+        <div class="imp-body" style="margin-bottom:12px">記録が蓄積されると以下の表に自動反映されます。</div>
+        <div style="overflow-x:auto">
+        <table class="cost-table">
+          <thead><tr><th>月</th><th>内容</th><th style="text-align:right">金額</th></tr></thead>
+          <tbody id="cost-tbody">
+            <tr><td colspan="3" style="text-align:center;color:var(--ink-m);padding:16px">活動日報が登録されると費用が集計されます</td></tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 年間スケジュール -->
+  <section class="sec" id="year">
+    <div class="sec-hd"><span class="sec-num">02</span><h2>年間スケジュール</h2><span class="sec-sub">2月〜翌年5月末・全体の流れ</span></div>
+    <div>
+      <div class="tl-row"><div class="tl-col"><div class="tl-dot hi">2月</div><div class="tl-line"></div></div><div class="tl-body"><div class="tl-title">前年度後半・着任準備</div><div class="chips"><span class="chip chip-r">前任からの引き継ぎ</span><span class="chip chip-g">市P総会（推奨）</span></div><div class="tl-note">着任前に前任会長から基礎情報を受け取る。役員名簿・規約・年間スケジュールを確認。</div><a href="#m-2" class="tl-link">▶ 2月の詳細</a></div></div>
+      <div class="tl-row"><div class="tl-col"><div class="tl-dot hi">3月</div><div class="tl-line"></div></div><div class="tl-body"><div class="tl-title">単P引き継ぎ支援・市P総会（推奨）</div><div class="chips"><span class="chip chip-g">市P総会（3月推奨）</span><span class="chip chip-t">単P引き継ぎ支援</span></div><div class="tl-note">単Pが自分たちの引き継ぎで多忙な時期。市Pとしてサポート役に徹する。市P総会をこの月に行えると理想的。</div><a href="#m-3" class="tl-link">▶ 3月の詳細</a></div></div>
+      <div class="tl-row"><div class="tl-col"><div class="tl-dot hi">4月</div><div class="tl-line"></div></div><div class="tl-body"><div class="tl-title">年度始まり・最重要月</div><div class="chips"><span class="chip chip-r">分会長会①</span><span class="chip chip-g">単P支援（立ち上げ）</span><span class="chip chip-t">出向委員会 役割決め</span></div><div class="tl-note">単P新会長への市P説明・関係構築が最優先。会場・日程を前年度末に仮押さえしておくこと。</div><a href="#m-4" class="tl-link">▶ 4月の詳細</a></div></div>
+      <div class="tl-row"><div class="tl-col"><div class="tl-dot">5月</div><div class="tl-line"></div></div><div class="tl-body"><div class="tl-title">単P総会サポート・市P総会（現行）</div><div class="chips"><span class="chip chip-r">分会長会②</span><span class="chip chip-r">市P総会（現行）</span><span class="chip chip-g">単P総会サポート</span></div><div class="tl-note">単P総会（下旬）向けサポートを5月初旬の分会長会で完結させる。市P総会は将来的に3月へ移行推奨。</div><a href="#m-5" class="tl-link">▶ 5月の詳細</a></div></div>
+      <div class="tl-row"><div class="tl-col"><div class="tl-dot lt" style="font-size:10px">6〜1月</div><div class="tl-line"></div></div><div class="tl-body"><div class="tl-title">定例活動期</div><div class="chips"><span class="chip chip-n">分会長会（定例）</span><span class="chip chip-n">委員会・出向</span></div><div class="tl-note">各月の記録が蓄積されると月別詳細に反映されます。</div></div></div>
+      <div class="tl-row"><div class="tl-col"><div class="tl-dot lt">翌2月</div><div class="tl-line"></div></div><div class="tl-body"><div class="tl-title">翌年2月・次期会長準備開始</div><div class="chips"><span class="chip chip-g">次期会長選出</span><span class="chip chip-t">引き継ぎ資料最終化</span></div><div class="tl-note">次期会長が決まり始める時期。引き継ぎ資料を最終確認し、3月総会に向けた準備を行う。</div><a href="#m-next2" class="tl-link">▶ 翌年2月の詳細</a></div></div>
+      <div class="tl-row"><div class="tl-col"><div class="tl-dot lt">翌3月</div><div class="tl-line"></div></div><div class="tl-body"><div class="tl-title">翌年3月・総会・引き継ぎ</div><div class="chips"><span class="chip chip-g">市P総会（移行後）</span><span class="chip chip-t">単P引き継ぎ支援</span><span class="chip chip-r">引き継ぎ資料完成</span></div><div class="tl-note">3月総会への移行が実現すれば単Pサポートに集中できる理想的な年度末に。引き継ぎ資料をこの月までに完成。</div><a href="#m-next3" class="tl-link">▶ 翌年3月の詳細</a></div></div>
+      <div class="tl-row"><div class="tl-col"><div class="tl-dot lt">翌4・5月</div></div><div class="tl-body" style="border-bottom:none"><div class="tl-title">翌年4〜5月末・活動終了</div><div class="chips"><span class="chip chip-t">後任サポート</span><span class="chip chip-n">5月末 活動終了</span></div><div class="tl-note">後任会長への伴走期間。5月末をもって活動期間終了。</div></div></div>
+    </div>
+  </section>
+
+  <!-- 03 月別詳細 -->
+  <section class="sec" id="monthly">
+    <div class="sec-hd"><span class="sec-num">03</span><h2>月別詳細</h2><span class="sec-sub">次第・結果・アドバイス</span></div>
+    <div id="months-container"></div>
+  </section>
+
+  <!-- 04 使い方・更新 -->
+  <section class="sec" id="howto">
+    <div class="sec-hd"><span class="sec-num">04</span><h2>使い方・更新方法</h2><span class="sec-sub">GitHub自動更新・日常の記録手順</span></div>
+
+    <!-- GitHub自動更新パネル -->
+    <div id="gh-panel">
+      <div class="card-title" style="margin-bottom:4px">⚡ GitHub Pages 自動更新</div>
+      <p style="font-size:13px;color:var(--ink-l);margin-bottom:14px;line-height:1.8">GitHubのPATとリポジトリ情報を入力しておくと、Claudeがこのファイルを更新するだけで自動的にWebに反映されます。入力値はこのブラウザにのみ保存されます。</p>
+      <div class="gh-form">
+        <div class="gh-row"><label class="gh-label">GitHubユーザー名</label><input class="gh-input" id="gh-user" placeholder="例：katano-pta" type="text"></div>
+        <div class="gh-row"><label class="gh-label">リポジトリ名</label><input class="gh-input" id="gh-repo" placeholder="例：pta-hikitsugi" type="text"></div>
+        <div class="gh-row"><label class="gh-label">Personal Access Token（public_repo スコープのみ）</label><input class="gh-input" id="gh-token" placeholder="ghp_xxxxxxxxxxxx" type="password"></div>
+        <button class="gh-btn" onclick="saveGhSettings()">設定を保存</button>
+      </div>
+      <div id="gh-status"></div>
+      <div class="warn-box">
+        <b>注意：</b>PATはパスワードと同等です。スコープは必ず <b>public_repo のみ</b> に絞ってください。このページはあなた自身のブラウザにのみ保存されます。他人のPCで使わないでください。
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">GitHub Pages 初期設定手順</div>
+      <div class="gh-step"><div class="gh-n">1</div><div class="gh-body"><b>PATを発行：</b> <span class="url-chip">github.com/settings/tokens/new</span> → Note: <span class="url-chip">pta-hikitsugi</span> → スコープ: <span class="url-chip">public_repo のみ</span> → Generate token → コピー保存</div></div>
+      <div class="gh-step"><div class="gh-n">2</div><div class="gh-body"><b>リポジトリ作成：</b> <span class="url-chip">github.com/new</span> → 名前: <span class="url-chip">pta-hikitsugi</span> → Public → Add README → Create</div></div>
+      <div class="gh-step"><div class="gh-n">3</div><div class="gh-body"><b>初回ファイルアップロード：</b> リポジトリ → Add file → Upload → <span class="url-chip">index.html</span> をドロップ → Commit changes</div></div>
+      <div class="gh-step"><div class="gh-n">4</div><div class="gh-body"><b>Pages有効化：</b> Settings → Pages → Source: Deploy from a branch → Branch: main / root → Save</div></div>
+      <div class="gh-step"><div class="gh-n">5</div><div class="gh-body"><b>URL確認（数分後）：</b> <span class="url-chip">https://（ユーザー名）.github.io/pta-hikitsugi/</span> にアクセスできれば完成。このURLを単P会長に共有。</div></div>
+      <div class="gh-step"><div class="gh-n">6</div><div class="gh-body"><b>以降の更新：</b>上の設定欄にPATを入力 → Claudeに報告 → 「反映」ボタン → Claudeが新しいHTMLを出力 → 同じ手順で上書きアップロードするだけ。</div></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">日常の使い方</div>
+      <div class="guide-step"><div class="g-num">1</div><div><div class="g-title">月ごとに新規チャットを開く</div><div class="g-text">プロジェクト内で <span class="g-code">「2025年4月」</span> のようにチャットを立てる。開くと自動でテンプレートが表示される。</div></div></div>
+      <div class="guide-step"><div class="g-num">2</div><div><div class="g-title">活動報告・気づきを話しかける</div><div class="g-text">テンプレートに沿って入力するか話し言葉でOK。Claudeが聞き返しながら整理。資料（PDF・Word等）はそのまま添付。</div></div></div>
+      <div class="guide-step"><div class="g-num">3</div><div><div class="g-title">「現況を反映」ボタンで資料を更新</div><div class="g-text">右下の赤いボタン → メッセージをコピー → Claudeに送る → 新しいHTMLが出力される → 同リポジトリに上書きアップロード → URL自動反映。</div></div></div>
+      <div class="guide-step"><div class="g-num">4</div><div><div class="g-title">月末に月次まとめをナレッジに保存</div><div class="g-text"><span class="g-code">「今月の記録を要約して」</span>と送り、要約をプロジェクトのナレッジに追加。次月は短いチャットで済む。</div></div></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">月次チャット開始テンプレート</div>
+      <div class="tmpl-box" id="tmpl-text">【月次チャット開始】
+対象月：　　年　　月
+
+■ 活動日報
+日付：
+場所・会場：
+会議名・イベント名：
+自分の役割：
+活動内容：
+請求費用：
+感じたこと：
+後任へのアドバイス：
+
+■ 気づきメモ
+いつのことか：
+カテゴリ：（総会・運営 / 単P支援 / 会長会 / 委員会・出向 / 年間スケジュール設計 / 人間関係・引き継ぎ / その他）
+気づいたこと：
+年間設計への助言：
+
+■ 会議記録（資料は添付してそのまま送ってOK）
+会議名：
+会議日：
+資料：（添付 or GoogleDriveリンク）
+感想・後任アドバイス：</div>
+      <button class="copy-btn" onclick="copyTmpl(event)">テンプレートをコピー</button>
+    </div>
+  </section>
+
+  <!-- 05 後任会長へ -->
+  <section class="sec" id="successor">
+    <div class="sec-hd"><span class="sec-num">05</span><h2>後任会長へ</h2><span class="sec-sub">このツールと引き継ぎの使い方</span></div>
+    <div class="card">
+      <div class="card-title">このHTMLについて</div>
+      <div class="guide-step"><div class="g-num">1</div><div><div class="g-title">このHTMLは引き継ぎ資料そのものです</div><div class="g-text">1年間の活動日報・気づきメモ・会議記録がすべて蓄積されています。スマホ・PCどちらからでも閲覧できます。URLは前任会長に確認してください。</div></div></div>
+      <div class="guide-step"><div class="g-num">2</div><div><div class="g-title">Claudeプロジェクトを引き継ぐ</div><div class="g-text">前任会長のClaude プロジェクト「交野市PTA協議会 会長引き継ぎノート」の指示文をコピーして、自分のClaudeアカウントで同名プロジェクトを作成してください。指示文は前任会長から受け取るか、このHTMLの「月次テンプレート」欄を参照してください。</div></div></div>
+      <div class="guide-step"><div class="g-num">3</div><div><div class="g-title">GitHubリポジトリを引き継ぐか新規作成する</div><div class="g-text">前任会長のリポジトリに書き込み権限をもらう（Collaborator追加）か、自分のGitHubに新しいリポジトリを作って最新のHTMLをアップロードすれば、自分のURLで公開できます。</div></div></div>
+      <div class="guide-step"><div class="g-num">4</div><div><div class="g-title">2月から記録を始める</div><div class="g-text">着任準備月（2月）からClaudeに話しかけて記録を積み上げてください。前任者の1年分の記録がこのHTMLにすべて残っています。月別詳細を読むと流れがわかります。</div></div></div>
+    </div>
+    <div class="card">
+      <div class="card-title">Claudeプロジェクト指示文（後任用コピー）</div>
+      <div class="tmpl-box" id="inst-text">あなたは交野市PTA協議会の会長（大阪府交野市）の専属アシスタントです。会長は現在1年間の任期中で、来年度の後任会長への引き継ぎ資料を作成するためにこのプロジェクトを使っています。
+
+【このプロジェクトの目的】
+・活動日報・気づきメモ・会議記録を蓄積し、最終的に引き継ぎ資料（HTML・ビジュアル形式）にまとめること
+
+【交野市PTA協議会について】
+・大阪府交野市にある各公立小中学校及び義務教育学校のPTAまたは、保護者会等（総じて単P）を束ねる市P
+・単Pの会長たちへの支援が主な役割
+・交野市全体の共通課題の解決や交野市の児童生徒、保護者のための活動も役割
+・主な活動：単P会長経験者が中心の市P役員、各校の単P現役会長らで開く会長会、副会長委員会の運営、市P総会、単P支援、出向委員会など
+・市P総会はこれまで５月にやってきたが、3月開催がベスト
+・4月と5月初旬に分会長会を2回設定し、単P総会（5月下旬）に間に合わせる
+・活動期間：2月（着任準備）〜翌年5月末
+
+【あなたの役割・行動ルール】
+1. 【チャット開始時に必ず実行】新しいチャットが始まったら最初にテンプレートを表示すること。
+2. 活動報告・気づきを受けたら情報が不足していれば必ず聞き返すこと。一度に聞く質問は最大2つまで。
+3. 会議記録・資料が届いたら「何の資料か」「どんな目的で記録したいか」を確認してから整理する。
+4. 記録をまとめる際は後任会長が読んで状況がわかる文章にすること。
+5. 気づきメモは「いつのことか」「どのカテゴリか」を必ず確認すること。
+6. 報告・質疑応答がひと区切りついたら「引き継ぎHTMLに反映しますか？」と聞くこと。
+7. 引き継ぎ資料の出力を求められたら図・表・イラスト中心のビジュアル形式で作成すること。
+
+【記録のカテゴリ】
+総会・運営 ／ 単P支援 ／ 会長会 ／ 委員会・出向 ／ 年間スケジュール設計 ／ 人間関係・引き継ぎ ／ その他
+
+【トークン節約ルール】
+・月ごとにチャットを新規作成する
+・月末に「今月の記録を要約して」→ 要約をナレッジに追加する
+・常設の基礎資料はナレッジに入れ毎回貼り直さない</div>
+      <button class="copy-btn" onclick="copyInst(event)">指示文をコピー</button>
+    </div>
+  </section>
+</main>
+
+<script>
+// ── MONTHS DATA ──
+const MONTHS = [
+  {id:'m-2',  label:'2月',     sub:'前年度後半・着任準備'},
+  {id:'m-3',  label:'3月',     sub:'単P引き継ぎ支援・市P総会（推奨）'},
+  {id:'m-4',  label:'4月',     sub:'年度始まり・最重要月'},
+  {id:'m-5',  label:'5月',     sub:'単P総会サポート'},
+  {id:'m-6',  label:'6月',     sub:'定例活動'},
+  {id:'m-7',  label:'7月',     sub:'定例活動'},
+  {id:'m-8',  label:'8月',     sub:'定例活動（夏季）'},
+  {id:'m-9',  label:'9月',     sub:'定例活動'},
+  {id:'m-10', label:'10月',    sub:'定例活動'},
+  {id:'m-11', label:'11月',    sub:'定例活動'},
+  {id:'m-12', label:'12月',    sub:'定例活動・年末'},
+  {id:'m-1',  label:'1月',     sub:'定例活動・翌年度準備開始'},
+  {id:'m-next2', label:'翌年2月', sub:'次期会長準備・引き継ぎ資料最終化'},
+  {id:'m-next3', label:'翌年3月', sub:'市P総会（推奨）・引き継ぎ'},
+  {id:'m-next4', label:'翌年4月', sub:'後任サポート期間'},
+  {id:'m-next5', label:'翌年5月末', sub:'活動終了'},
+];
+
+// ── BUILD MONTH SECTIONS ──
+const container = document.getElementById('months-container');
+MONTHS.forEach(m => {
+  container.insertAdjacentHTML('beforeend', `
+    <div class="mon-sec" id="${m.id}">
+      <div class="mon-hd">
+        <div class="mon-badge" id="badge-${m.id}">${m.label}</div>
+        <div>
+          <h3>${m.label}の活動記録</h3>
+          <p id="sub-${m.id}">${m.sub}</p>
+        </div>
+      </div>
+      <div class="empty" id="empty-${m.id}">
+        📅 ${m.label}の記録がまだありません。<br>
+        活動日報・気づきメモ・会議記録を送ると、ここに反映されます。
+      </div>
+      <div id="records-${m.id}"></div>
+    </div>
+  `);
+});
+
+// ── INIT ──
+document.getElementById('last-upd-txt').textContent = new Date().toLocaleDateString('ja-JP');
+loadGhSettings();
+
+// ── DRAWER ──
+function openDrawer(){
+  document.getElementById('drawer').classList.add('open');
+  document.getElementById('overlay').classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+function closeDrawer(){
+  document.getElementById('drawer').classList.remove('open');
+  document.getElementById('overlay').classList.remove('show');
+  document.body.style.overflow = '';
+}
+
+// ── MODAL ──
+const modalWrap = document.getElementById('modal-wrap');
+function openModal(){ modalWrap.classList.add('show'); document.body.style.overflow='hidden'; }
+function closeModal(){ modalWrap.classList.remove('show'); document.body.style.overflow=''; }
+modalWrap.addEventListener('click', e => { if(e.target === modalWrap) closeModal(); });
+
+// ── COPY FUNCTIONS ──
+function copyReflect(){
+  navigator.clipboard.writeText('これまでの記録を引き継ぎ資料HTMLに反映して').then(()=>{
+    const btn = document.querySelector('.m-btn.p');
+    btn.textContent='コピーしました！';
+    setTimeout(()=>{ btn.textContent='メッセージをコピー'; }, 2200);
+  });
+}
+function copyTmpl(e){
+  navigator.clipboard.writeText(document.getElementById('tmpl-text').textContent).then(()=>{
+    e.target.textContent='コピーしました！';
+    setTimeout(()=>{ e.target.textContent='テンプレートをコピー'; }, 2200);
+  });
+}
+function copyInst(e){
+  navigator.clipboard.writeText(document.getElementById('inst-text').textContent).then(()=>{
+    e.target.textContent='コピーしました！';
+    setTimeout(()=>{ e.target.textContent='指示文をコピー'; }, 2200);
+  });
+}
+
+// ── GITHUB SETTINGS ──
+function saveGhSettings(){
+  const user = document.getElementById('gh-user').value.trim();
+  const repo = document.getElementById('gh-repo').value.trim();
+  const token = document.getElementById('gh-token').value.trim();
+  if(!user||!repo||!token){ showStatus('err','ユーザー名・リポジトリ名・PATをすべて入力してください'); return; }
+  localStorage.setItem('gh_user', user);
+  localStorage.setItem('gh_repo', repo);
+  localStorage.setItem('gh_token', token);
+  showStatus('ok', `設定を保存しました。URL: https://${user}.github.io/${repo}/`);
+}
+function loadGhSettings(){
+  const u = localStorage.getItem('gh_user');
+  const r = localStorage.getItem('gh_repo');
+  const t = localStorage.getItem('gh_token');
+  if(u) document.getElementById('gh-user').value = u;
+  if(r) document.getElementById('gh-repo').value = r;
+  if(t) document.getElementById('gh-token').value = t;
+}
+function showStatus(type, msg){
+  const el = document.getElementById('gh-status');
+  el.className = type;
+  el.textContent = msg;
+  el.style.display = 'block';
+  if(type==='ok') setTimeout(()=>{ el.style.display='none'; }, 4000);
+}
+
+// ── INTERSECTION OBSERVER (active nav) ──
+const allSections = document.querySelectorAll('[id^="m-"]');
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      document.querySelectorAll('#drawer a').forEach(a=>a.classList.remove('act'));
+      const navEl = document.getElementById('nav-'+entry.target.id);
+      if(navEl) navEl.classList.add('act');
+    }
+  });
+},{threshold:0.3});
+allSections.forEach(s=>observer.observe(s));
+</script>
+</body>
+</html>
